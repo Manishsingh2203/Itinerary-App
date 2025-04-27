@@ -3,7 +3,6 @@ import FlightDetails from "../../components/FlightDetails/FlightDetails"; // Fli
 import Accommodation from "../../components/Accommodation/Accommodation"; // Hotel/accommodation info
 import Activities from "../../components/Activities/Activities"; // Planned activities list
 import BottomNav from "../../components/BottomNav/BottomNav"; // Bottom navigation bar
-import StatusBar from "../../components/StatusBar/StatusBar"; // iOS-style top status bar
 import { useState } from "react"; // React Hook for state
 import "./Dashboard.scss"; // Dashboard specific styles
 
@@ -21,8 +20,7 @@ function Dashboard() {
   return (
     <div className={`dashboard ${darkMode ? "dark-mode" : ""}`}>
       
-      {/*  Top StatusBar */}
-      <StatusBar />
+      
 
       {/*  Dashboard Header */}
       <header className="dashboard__header">

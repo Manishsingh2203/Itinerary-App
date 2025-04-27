@@ -2,7 +2,6 @@ import { useState } from 'react'; // Import useState hook for local state manage
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook for navigation
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon component
 import { faUser, faHeart, faUsers, faUserFriends } from '@fortawesome/free-solid-svg-icons'; // Import icons
-import StatusBar from "../../components/StatusBar/StatusBar"; // import StatusBar!
 import './Onboarding.scss'; // Import onboarding styles
 
 // Onboarding Component
@@ -27,8 +26,7 @@ function Onboarding() {
 
   return (
     <div className="onboarding">
-      {/*  the StatusBar at the top */}
-      <StatusBar />
+     
 
       {/* Title and Subtitle */}
       <h2 className="title">Plan Your Journey, Your Way!</h2>
