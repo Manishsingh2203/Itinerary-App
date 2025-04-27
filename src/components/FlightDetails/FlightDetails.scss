@@ -1,0 +1,109 @@
+.flight-details {
+  position: relative; // For positioning the airplane image absolutely inside
+  background-color: #3A3BFF; // Bright blue background
+  color: white; // White text
+  border-radius: 16px; // Rounded corners
+  padding: 20px 16px; // Internal padding
+  overflow: hidden; // Prevents overflow from plane image
+  min-height: 150px; // Minimum height
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; // Start content from top
+}
+
+// Header section with title and "See All" link
+.flight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+
+  h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .see-all {
+    font-size: 13px;
+    color: #c8f560; // Light green text
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease; // Smooth hover effect
+
+    &:hover {
+      transform: scale(1.05); // Slight zoom on hover
+    }
+  }
+}
+
+// Flight information section
+.flight-info {
+  margin-top: 4px;
+  z-index: 2; // Stays above plane image
+
+  .flight-date {
+    font-size: 14px;
+    margin-bottom: 16px;
+    opacity: 0.9; // Slightly faded
+  }
+
+  .airport-codes {
+    display: flex;
+    align-items: center;
+    gap: 20px; // Space between codes and arrow
+
+    .airport {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .code {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .city {
+        font-size: 13px;
+        opacity: 0.85;
+      }
+    }
+
+    .arrow {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+
+/*  Airplane Image */
+.plane-image {
+  position: absolute; // Positioned inside .flight-details
+  bottom: -160px;
+  right: 200px;
+  width: 600px;
+  height: auto;
+  opacity: 1;
+  z-index: 1; // Behind the text
+  transform: rotate(230.83deg); // Rotated plane image
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; // Maintain aspect ratio
+  }
+}
+
+/*  Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .flight-details {
+    padding: 16px 12px; // Slightly smaller padding
+  }
+
+  .plane-image {
+    width: 430px; // Smaller plane image
+    right: -195px;
+    bottom: -130px;
+  }
+}

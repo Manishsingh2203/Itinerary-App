@@ -1,0 +1,64 @@
+.dashboard {
+  position: relative; // Make dashboard relative for inner absolute/fixed positioning
+  padding: 16px;
+
+  &.dark-mode {
+    background-color: #121212; // Dark mode background
+    color: white; // Dark mode text color
+  }
+}
+
+// Style for the round control button (plus/add button etc.)
+.control-button {
+  background-color: #FF6B35; // Bright orange background
+  color: white; // Text color white
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 50%; // Make it perfectly round
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); // Soft shadow for floating effect
+  z-index: 10; // Ensure it stays above other elements
+  transition: background-color 0.3s ease; // Smooth hover effect
+  margin-left: auto; // Align to right
+  margin-top: 50px; // Space from top
+
+  &:hover {
+    background-color: #ff4a05; // Darker orange on hover
+  }
+}
+
+// Default paragraph styling inside dashboard
+p {
+  font-size: 19px; // Slightly bigger paragraphs
+}
+
+// Default h3 heading styling inside dashboard
+h3 {
+  font-size: 18px; // Slightly bigger subheadings
+}
+
+// Styling for control menu popup
+.control-menu {
+  position: fixed;
+  bottom: 140px; // Height from bottom
+  right: 20px; // Right alignment
+  background: white; // White background
+  padding: 12px;
+  border-radius: 12px; // Rounded corners
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); // Soft shadow for elevation
+  z-index: 1001; // Very high to float above everything
+
+  button {
+    background-color: rgba(54, 67, 251, 1); // Strong blue button background
+    border: none;
+    color: rgba(54, 67, 251, 1); // (This color seems similar to background, might need contrast check)
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}

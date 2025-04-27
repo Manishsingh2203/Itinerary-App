@@ -1,0 +1,95 @@
+.trip-card {
+  background-color: var(--card-bg); // Background from CSS variable
+  border-radius: 20px; // Rounded corners
+  overflow: hidden; // Clip child elements
+  position: relative;
+  width: 100%; // Full container width
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); // Strong card shadow
+  cursor: pointer;
+  transition: transform 0.3s ease; // Smooth hover animation
+  margin-bottom: 2rem; // Space below the card
+
+  &:hover {
+    transform: translateY(-5px); // Lift card slightly on hover
+  }
+
+  .background-image {
+    position: relative;
+    height: 300px; // Fixed height for background image
+
+    img {
+      width: 100%; // Full width
+      height: 100%; // Full height
+      object-fit: cover; // Maintain image aspect ratio
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0; // Cover the entire image
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9)); // Top-to-bottom dark overlay
+      padding: 20px; // Inner spacing
+      display: flex;
+      flex-direction: column; // Vertical stacking
+      justify-content: space-between; // Space out top and bottom content
+
+      .card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px; // Spacing between title and date
+
+        h2 {
+          font-size: 32px;
+          font-weight: 800;
+          color: white; // Bright title
+          margin: 0;
+          letter-spacing: 1px; // Letter spacing for style
+        }
+
+        .date-range {
+          font-size: 14px;
+          color: #eee; // Light gray text
+          opacity: 0.85; // Slight transparency
+        }
+      }
+
+      .arrow-icon {
+        position: absolute;
+        top: 16px;
+        right: 16px; // Top right corner
+        backdrop-filter: blur(6px); // Blurry background for the icon
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; // Circular button
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white; // White icon
+        z-index: 2; // Stay above other elements
+        cursor: pointer;
+      }
+
+      .card-details {
+        display: flex;
+        justify-content: space-around; // Spread out details evenly
+        align-items: center;
+        font-size: 14px;
+        color: white;
+        width: 100%;
+        padding: 12px 0;
+        backdrop-filter: blur(1px); // Light blur background
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px; // Match card's bottom radius
+
+        .detail-item {
+          display: flex;
+          align-items: center;
+          gap: 6px; // Space between icon and text
+
+          .detail-icon {
+            font-size: 16px; // Slightly larger icon
+          }
+        }
+      }
+    }
+  }
+}

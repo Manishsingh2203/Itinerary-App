@@ -1,0 +1,180 @@
+.activities {
+  padding: 16px;
+
+  // Header section with title and "See All" link
+  .activities-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .see-all {
+      font-size: 14px;
+      color: var(--primary-blue, #3A3BFF);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #2a2be0; // Slightly darker blue on hover
+      }
+    }
+  }
+
+  // Buttons to select different day plans
+  .day-plan {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    button {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--primary-blue, #3A3BFF);
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--primary-blue, #3A3BFF);
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+
+      &.active {
+        background: var(--primary-blue, #3A3BFF);
+        color: #fff; // White text on active button
+      }
+    }
+  }
+
+  // Horizontal scrollable date selector
+  .date-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+
+    .date {
+      min-width: 50px;
+      background: #eee;
+      border-radius: 10px;
+      text-align: center;
+      padding: 8px 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, color 0.3s;
+
+      &.active {
+        background: var(--primary-blue, #3A3BFF);
+        color: #fff; // White text when active
+      }
+
+      .month {
+        font-size: 12px;
+      }
+
+      .day {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Activities for the selected day
+  .day-activities {
+    margin-top: 8px;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        color: var(--primary-blue, #3A3BFF);
+        font-weight: 500;
+        font-size: 14px;
+
+        &.activity-count {
+          font-size: 13px; // Slightly smaller font for activity count
+        }
+      }
+    }
+
+    // Individual activity card
+    .activity-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      border: 1px solid #eee;
+      padding: 10px;
+
+      img {
+        width: 100px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h5 {
+          font-size: 15px;
+          font-weight: 600;
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 13px;
+          color: #555;
+          margin: 2px 0;
+
+          strong {
+            font-weight: 600;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .activities {
+    padding: 12px;
+  }
+
+  .day-plan button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .day-activities .activity-card {
+    img {
+      width: 80px;
+      height: 70px; // Slightly smaller image for mobile
+    }
+  }
+}

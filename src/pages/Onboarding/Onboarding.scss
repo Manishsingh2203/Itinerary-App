@@ -1,0 +1,123 @@
+.onboarding {
+  min-height: 100vh; // Full viewport height
+  background: linear-gradient(to bottom, #f9fafb, #e0e7ff); // Light gradient background
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  align-items: center;
+  color: #111827; // Darker text for better readability
+  font-family: 'Inter', sans-serif; // Clean modern font
+
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827; // Dark title text
+    text-align: center;
+    margin-top: 60px; // Push title down a bit
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #6b7280; // Soft gray subtitle text
+    margin-top: -4px;
+    text-align: center;
+  }
+
+  .form-section {
+    width: 100%;
+    max-width: 400px; // Centered and limited width for forms
+    margin-top: 30px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: -4px;
+      color: #374151; // Darker gray for section titles
+    }
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      background-color: #f3f4f6; // Light input background
+      border: 1px solid #d1d5db; // Light border
+      border-radius: 12px;
+      padding: 12px 16px; // Comfortable padding
+
+      .input-icon {
+        margin-right: 8px;
+        font-size: 18px;
+        color: #6b7280; // Gray icon color
+      }
+
+      .text-input {
+        flex: 1; // Input takes all remaining space
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #374151; // Darker input text
+      }
+
+      select.text-input {
+        appearance: none; // Remove default select styling
+        background: transparent;
+      }
+    }
+  }
+
+  .travel-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 buttons per row
+    gap: 12px; // Space between buttons
+  }
+
+  .travel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #f3f4f6; // Light gray button
+    border: 1px solid #d1d5db; // Light border
+    border-radius: 12px;
+    padding: 12px 0;
+    color: #111827; // Dark button text
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s; // Smooth transitions
+
+    .travel-icon {
+      font-size: 18px; // Icon size inside button
+    }
+
+    &:hover {
+      background-color: #e5e7eb; // Slightly darker on hover
+    }
+
+    &.selected {
+      background-color: rgba(54, 67, 251, 1); // Primary color when selected
+      color: white; // White text on selected
+      border-color: transparent; // Remove border on select
+    }
+  }
+
+  .continue-button {
+    background-color: rgba(54, 67, 251, 1); // Primary blue button
+    color: white;
+    padding: 16px;
+    width: 100%;
+    max-width: 400px; // Match form width
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 100px; // Push button down
+    cursor: pointer;
+    transition: background-color 0.3s; // Smooth hover
+
+    &:hover {
+      background-color: rgba(54, 67, 251, 1); // Slightly darker blue on hover
+    }
+  }
+}

@@ -1,0 +1,145 @@
+:root {
+  --primary-blue: #3A3BFF; // Primary theme blue
+  --confirmed-green: #00C853; // Confirmed status color
+  --pending-orange: #FF6D00; // Pending status color
+}
+
+// Accommodation section container
+.accommodation {
+  margin-top: 20px;
+  padding: 16px;
+
+  // Header with title and "See All" link
+  .accommodation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .see-all {
+      font-size: 14px;
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #2a2be0; // Slightly darker blue on hover
+      }
+    }
+  }
+
+  // Horizontal scrollable grid for accommodation cards
+  .accommodation-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory; // Smooth snap scrolling
+    scroll-padding: 12px;
+
+    // Single accommodation card
+    .accommodation-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      min-width: 250px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 1px solid #eee;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-4px); // Slight lift on hover
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover; // Image covers the area without distortion
+      }
+
+      // Content inside card
+      .card-content {
+        padding: 10px;
+
+        .rating {
+          font-size: 12px;
+          background-color: var(--primary-blue);
+          color: white;
+          display: inline-block;
+          padding: 2px 6px;
+          border-radius: 6px;
+          margin-bottom: 8px;
+          font-weight: 500;
+        }
+
+        h5 {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 4px 0 8px 0;
+        }
+
+        p {
+          font-size: 13px;
+          margin: 2px 0;
+
+          strong {
+            font-weight: 600;
+          }
+        }
+
+        // Row for nights and booking status
+        .status-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 8px;
+
+          .nights {
+            font-size: 13px;
+            font-weight: 500;
+          }
+
+          .status {
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &.confirmed {
+              color: var(--confirmed-green); // Green for confirmed
+            }
+
+            &.pending {
+              color: var(--pending-orange); // Orange for pending
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .accommodation {
+    padding: 12px; // Smaller padding
+
+    .accommodation-grid {
+      .accommodation-card {
+        min-width: 220px; // Slightly smaller card width
+      }
+    }
+  }
+}
